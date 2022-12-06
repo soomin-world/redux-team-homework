@@ -14,3 +14,15 @@ optional chaning연산자 (?.)는 객체 내의 key에 접근할 때 그 참조�
 ?. 앞의 평가대상이 만약 nullish ( undefined 또는 null ) 일 경우 평가를 멈추고 undefined를 반환합니다.
 
 우리는 코드를 짜면서 객체내의 값을 접근하는 경우가 종종 있습니다. 하지만 항상 그 key값이 존재하는 경우 보다는 없는 경우도 있기 때문에 옵셔널 
+
+## Q3. <form>을 사용할 때, <button type="submit">을 함께 사용하면 리덕스 데이터가 초기화 되는데, 왜 초기화 되는 지 생각해봅시다.
+
+< form > 내부의 < button >은 클릭시 submit 이벤트가 발생되는데 데이터를 submit하기 위해 페이지를 리로딩하고 그 페이지가 리로딩되면 리덕스 store의 state 값이 초기화가 된다
+
+## Q4. 새로고침 시에도 리덕스 내의 데이터를 유지하려면 어떤 방법을 써야할까요?
+
+- state를 LocalStorage, SessionStorage에 직접 저장, 삭제유지하고 싶은 데이터를 LocalStorage, SessionStorage에 저장
+- Redux-Persist 라이브러리 사용하기
+    - Redux-Persist : LocalStorage, SeesionStorage를 redux에서 사용
+    - Redux-Persist의 persistReducer를 특정 Reducer와 결합 후 Storage에서 저장
+    - [https://11001.tistory.com/191](https://11001.tistory.com/191)
